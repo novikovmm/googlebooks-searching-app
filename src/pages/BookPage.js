@@ -1,18 +1,29 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+const { REACT_APP_API_URL: api, REACT_APP_API_KEY: key } = process.env;
+
 const BookPage = () => {
+	const { id } = useParams();
+
+	const [book, setBook] = useState({});
+
+	useEffect(() => {
+		fetch(`${api}/volumes/${id}`)
+			.then((data) => data.json())
+			.then(console.log)
+			// .then((data) => setBook(data));
+	});
+
 	return (
-		<div className='container'>
+		<div onClick={() => console.log(book.volumeInfo.title)} className='container'>
 			<div className='card my-5 custom'>
 				<div className='row g-0'>
 					<div className='col-md-4'>
-						<img
-							src='https://kaifolog.ru/uploads/posts/2014-12/thumbs/1419387276_001_1.jpg'
-							className='img-fluid rounded-start'
-							alt='...'
-						/>
+						<img className='img-fluid rounded-start' alt='...' />
 					</div>
 					<div className='col-md-8'>
 						<div className='card-body'>
-							<h5 className='card-title'>This is title</h5>
+							<h5 className='card-title'>title</h5>
 							<hr />
 							<h6 className='card-text'>Category</h6>
 							<p className='card-text'> John Malkovic, Persik Jackson, Uma Truman</p>
