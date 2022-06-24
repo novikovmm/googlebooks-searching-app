@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
-import MainPage from "./pages/MainPage";
-import BookPage from "./pages/BookPage";
+import { Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import MainPage from './pages/MainPage'
+import BookPage from './pages/BookPage'
 
 const App = () => {
 	return (
@@ -13,7 +13,7 @@ const App = () => {
 				</Route>
 			</Routes>
 		</>
-	);
-};
+	)
+}
 
-export default App;
+export default App

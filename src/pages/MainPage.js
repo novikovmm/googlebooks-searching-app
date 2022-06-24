@@ -1,9 +1,7 @@
-import BooksContainer from "../components/BooksContainer"
+import BooksContainer from '../components/BooksContainer'
 
 const MainPage = () => {
-  return (
-    <BooksContainer/>
-  );
-};
+	return <BooksContainer />
+}
 
 export default MainPage

@@ -1,23 +1,22 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getBooks } from "../redux/ac/books.ac";
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { getBooks } from '../redux/ac/books.ac'
 
 const Header = () => {
-	const [search, setSearch] = useState("");
-	const [category, setCategory] = useState("all");
-	const [sort, setSort] = useState("relevance");
-	const dispatch = useDispatch();
+	const [search, setSearch] = useState('')
+	const [category, setCategory] = useState('all')
+	const [sort, setSort] = useState('relevance')
+	const dispatch = useDispatch()
 
 	const submitHandler = (ev) => {
-		ev.preventDefault();
+		ev.preventDefault()
 		const searchParams = {
 			search,
 			category,
 			sort,
-		};
-		dispatch(getBooks(searchParams));
-	};
-
+		}
+		dispatch(getBooks(searchParams))
+	}
 	return (
 		<header className='container-fluid pt-3 bg-dark text-white'>
 			<h2 className='text-center'>Search for books</h2>
@@ -25,7 +24,12 @@ const Header = () => {
 				<div className='row d-flex justify-content-center my-3'>
 					<div className='col-md-6'>
 						<div className='input-group'>
-							<input onChange={(ev) => setSearch(ev.target.value)} value={search} id='search' className='form-control' />
+							<input
+								onChange={(ev) => setSearch(ev.target.value)}
+								value={search}
+								id='search'
+								className='form-control'
+							/>
 							<button type='submit' className='btn btn-secondary'>
 								Search
 							</button>
@@ -57,7 +61,7 @@ const Header = () => {
 				</div>
 			</form>
 		</header>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header

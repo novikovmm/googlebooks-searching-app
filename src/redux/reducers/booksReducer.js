@@ -1,15 +1,15 @@
-import { GET_BOOKS } from "../types";
+import { GET_BOOKS} from '../types'
 
 const booksReducer = (state = {}, action) => {
-	const { type, payload } = action;
+	const { type, payload } = action
 	switch (type) {
 		case GET_BOOKS:
-			const { totalItems: total, items: books } = payload;
-			return { ...state, total, books };
+			const { totalItems: total, items: books } = payload
+			return { ...state, total, books }
 
 		default:
-			return state;
+			return state
 	}
-};
+}
 
-export default booksReducer;
+export default booksReducer
