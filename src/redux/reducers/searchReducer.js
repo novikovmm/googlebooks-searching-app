@@ -6,7 +6,6 @@ const searchReducer = (state = {}, action) => {
 	switch (type) {
 		case SAVE_SEARCH_PARAMS:
 			const { search, category, sort } = payload
-			console.log(payload)
 			return { ...state, search, category, sort }
 		default:
 			return state

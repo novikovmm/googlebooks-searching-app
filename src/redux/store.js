@@ -12,6 +12,7 @@ const initialState = {
 		sort: null,
 		category: null,
 	},
+	loaderState: false,
 }
 
 const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)))
