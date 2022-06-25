@@ -1,4 +1,6 @@
 //booksState
 export const GET_BOOKS = 'GET_BOOKS'
-//book
-export const GET_BOOK = 'GET_BOOK'
+export const GET_MORE_BOOKS = 'GET_MORE_BOOKS'
+
+//searchState
+export const SAVE_SEARCH_PARAMS = 'SAVE_SEARCH_PARAMS'

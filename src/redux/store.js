@@ -7,6 +7,11 @@ const initialState = {
 		total: 0,
 		books: [],
 	},
+	searchState: {
+		search: null,
+		sort: null,
+		category: null,
+	},
 }
 
 const store = createStore(rootReducer, initialState, composeWithDevTools(applyMiddleware(thunk)))

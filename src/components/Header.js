@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { getBooks } from '../redux/ac/books.ac'
+import { saveSearchParams } from '../redux/ac/search.ac'
 
 const Header = () => {
 	const [search, setSearch] = useState('')
 	const [category, setCategory] = useState('all')
 	const [sort, setSort] = useState('relevance')
+
 	const dispatch = useDispatch()
 
 	const submitHandler = (ev) => {
@@ -15,6 +17,7 @@ const Header = () => {
 			category,
 			sort,
 		}
+		dispatch(saveSearchParams(searchParams))
 		dispatch(getBooks(searchParams))
 	}
 	return (

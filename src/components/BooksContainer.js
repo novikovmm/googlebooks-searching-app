@@ -1,8 +1,20 @@
 import Book from './Book'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { loadMoreBooks } from '../redux/ac/books.ac'
+import { useNavigate } from 'react-router-dom'
 
 const BooksContainer = () => {
 	const { total, books } = useSelector((state) => state.booksState)
+	const { search, category, sort } = useSelector((state) => state.searchState)
+
+	const dispatch = useDispatch()
+
+	const navigate = useNavigate()
+
+	const load = (startIndex = books.length) => {
+		dispatch(loadMoreBooks({ search, category, sort, startIndex }, navigate))
+	}
+
 	return (
 		<>
 			{total > 0 ? (
@@ -12,11 +24,14 @@ const BooksContainer = () => {
 			)}
 			<div className='container mt-2'>
 				<div className='row g-3'>
-					{books.length !== 0 && books.map((book) => <Book key={book.id + '+' + book.etag} {...book} />)}
+					{books?.length !== 0 && books?.map((book) => <Book key={book.id + '+' + book.etag} {...book} />)}
 				</div>
 				<div className='d-grid gap-2 col-6 mx-auto'>
 					{total > 0 && (
-						<button type='button' className='btn btn-outline-secondary btn-lg mx-auto my-4'>
+						<button
+							onClick={() => load(books.length)}
+							type='button'
+							className='btn btn-outline-secondary btn-lg mx-auto my-4'>
 							load more...
 						</button>
 					)}
