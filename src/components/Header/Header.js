@@ -10,8 +10,6 @@ const Header = () => {
 	const [category, setCategory] = useState('all')
 	const [sort, setSort] = useState('relevance')
 
-	console.log(styles['content__search-form'])
-
 	const dispatch = useDispatch()
 
 	const submitHandler = (ev) => {
