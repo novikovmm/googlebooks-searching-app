@@ -1,4 +1,4 @@
-import BooksContainer from '../components/BooksContainer'
+import BooksContainer from '../components/BooksContainer/BooksContainer'
 
 const MainPage = () => {
 	return <BooksContainer />
