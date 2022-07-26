@@ -1,0 +1,13 @@
+.card {
+    margin: 5px;
+    padding: 6px;
+    width: 200px;
+}
+
+.img-wrapper {
+    text-align: center;
+}
+
+.card-title, .card-category, .card-authors {
+    margin-top: 4px;
+}

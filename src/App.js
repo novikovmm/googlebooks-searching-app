@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout'
 import MainPage from './pages/MainPage'
 import BookPage from './pages/BookPage'
+import './App.css'
 
 const App = () => {
 	return (
